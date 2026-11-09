@@ -1,0 +1,33 @@
+condition:
+  name: noise_aware_lora
+  training_noise: true
+  regularizer: false
+lora:
+  rank: 4
+  alpha: 4.0
+  targets: [query, key, value, fc1, fc2]
+noise:
+  sigma: 0.01
+  block_size: 64
+  refresh_steps: 400
+  train_seed: 1042
+  granularity: elementwise_iid
+  scope: encoder_linear_weights
+regularizer:
+  mu: 0.1
+  interval: 400
+  norm: frobenius_unsquared
+  reduction: sum
+training:
+  epochs: 100
+  warmup_epochs: 10
+  train_batch_size: 64
+  eval_batch_size: 128
+  lora_learning_rate: 1.0e-4
+  classifier_learning_rate: 1.0e-3
+  weight_decay: 1.0e-4
+  seed: 42
+evaluation:
+  clean: true
+  noise_sigma: 0.01
+  noise_seeds: [1, 2, 3, 4, 5]

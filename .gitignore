@@ -1,0 +1,41 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and editor files
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+
+# Local datasets, pretrained weights, and training outputs
+data/
+pretrained/
+checkpoints/
+vit_lora_baseline/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Experiment logs
+runs/
+wandb/
+logs/
+
+# Legacy and pilot results retained locally
+results/*.json
+results/*/*.json
+results/**/smoke/
+archive/invalid_regularizer_interval_1/checkpoints/
+archive/invalid_regularizer_interval_1/results/
+archive/invalid_regularizer_interval_1/invalid_experiment_summary.md
+
+# Operating-system files
+.DS_Store
+Thumbs.db
